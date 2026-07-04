@@ -1,27 +1,28 @@
 use std::io;
 fn main() {
-    fn print_math(num_1: i32, num_2: i32) {
-        println!("{num_1} + {num_2} is {}", num_1 + num_2);
-        println!("{num_1} - {num_2} is {}", num_1 - num_2);
-    }
-
-    let mut input_1 = String::default();
-    let mut input_2 = String::default();
-
     println!("Enter a whole number:");
-    io::stdin().read_line(&mut input_1).expect("error reading");
+    let input_1 = get_input();
 
     println!("Enter another whole number:");
-    io::stdin().read_line(&mut input_2).expect("error reading");
+    let input_2 = get_input();
 
-    let num_1: i32 = input_1.trim().parse().expect("not a i32");
-    let num_2: i32 = input_2.trim().parse().expect("not a i32");
+    let num_1 = parse_num(&input_1);
+    let num_2 = parse_num(&input_2);
 
     print_math(num_1, num_2);
-
-    access_test();
 }
 
-fn access_test() {
-    print_math(1, 2); //error
+fn print_math(num_1: i32, num_2: i32) {
+    println!("{num_1} + {num_2} is {}", num_1 + num_2);
+    println!("{num_1} - {num_2} is {}", num_1 - num_2);
+}
+
+fn parse_num(input: &str) -> i32 {
+    input.trim().parse().expect("not a i32")
+}
+
+fn get_input() -> String {
+    let mut input = String::default();
+    io::stdin().read_line(&mut input).expect("error reading");
+    input
 }
