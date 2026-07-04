@@ -15,15 +15,7 @@ fn print_math(num_1: i32, num_2: i32) {
 }
 
 fn get_num() -> i32 {
-    parse_num(&get_input())
-}
-
-fn parse_num(input: &str) -> i32 {
-    input.trim().parse().expect("not a i32")
-}
-
-fn get_input() -> String {
     let mut input = String::default();
     io::stdin().read_line(&mut input).expect("error reading");
-    input
+    input.trim().parse().expect("not a i32")
 }
