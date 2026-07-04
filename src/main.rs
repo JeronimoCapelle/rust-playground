@@ -1,13 +1,10 @@
 use std::io;
 fn main() {
     println!("Enter a whole number:");
-    let input_1 = get_input();
+    let num_1 = get_num();
 
     println!("Enter another whole number:");
-    let input_2 = get_input();
-
-    let num_1 = parse_num(&input_1);
-    let num_2 = parse_num(&input_2);
+    let num_2 = get_num();
 
     print_math(num_1, num_2);
 }
@@ -15,6 +12,10 @@ fn main() {
 fn print_math(num_1: i32, num_2: i32) {
     println!("{num_1} + {num_2} is {}", num_1 + num_2);
     println!("{num_1} - {num_2} is {}", num_1 - num_2);
+}
+
+fn get_num() -> i32 {
+    parse_num(&get_input())
 }
 
 fn parse_num(input: &str) -> i32 {
