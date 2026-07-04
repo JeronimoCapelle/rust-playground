@@ -12,6 +12,10 @@ fn main() {
     let num_1: i32 = input_1.trim().parse().expect("not a i32");
     let num_2: i32 = input_2.trim().parse().expect("not a i32");
 
+    print_math(num_1, num_2);
+}
+
+fn print_math(num_1: i32, num_2: i32) {
     println!("{num_1} + {num_2} is {}", num_1 + num_2);
     println!("{num_1} - {num_2} is {}", num_1 - num_2);
 }
