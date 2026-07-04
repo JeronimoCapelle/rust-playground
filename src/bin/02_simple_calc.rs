@@ -1,11 +1,20 @@
 fn main() {
-    let x = get_number();
+    // Calculates an expression
+    // by using two user provided numbers
+    // and an operand.
+    // Then displays it.
+
+    let num_1 = get_number();
     let operand = get_operand();
-    let y = get_number();
+    let num_2 = get_number();
 
-    let result = calculate(x, &operand, y);
+    if !verify_operand(&operand) {
+        return;
+    }
 
-    display_result(x, &operand, y, result);
+    let result = calculate(num_1, &operand, num_2);
+
+    display_result(num_1, &operand, num_2, result);
 }
 
 fn get_number() -> i32 {
@@ -26,12 +35,17 @@ fn get_input() -> String {
     input.trim().to_string()
 }
 
-fn display_result(x: i32, op: &String, y: i32, res: i32) {
-    println!("{x} {op} {y} = {res}");
+fn display_result(x: i32, operand: &str, y: i32, res: i32) {
+    println!("-----------");
+    println!("{x} {operand} {y} = {res}");
 }
 
-fn calculate(x: i32, op: &str, y: i32) -> i32 {
-    match op {
+fn verify_operand(operand: &str) -> bool {
+    matches!(operand, "+" | "-" | "*" | "/")
+}
+
+fn calculate(x: i32, operand: &str, y: i32) -> i32 {
+    match operand {
         "+" => x + y,
         "-" => x - y,
         "*" => x * y,
