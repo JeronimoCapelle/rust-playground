@@ -1,21 +1,10 @@
-use std::io;
 fn main() {
-    println!("Enter a whole number:");
-    let num_1 = get_num();
+    //PLACEHOLDER: this repo only has tiny projects inside "src/bin"
+    //for testing and learning the language,
 
-    println!("Enter another whole number:");
-    let num_2 = get_num();
+    // you can run them individually by doing
+    //"cargo run --bin 01_math_fn"
 
-    print_math(num_1, num_2);
-}
-
-fn print_math(num_1: i32, num_2: i32) {
-    println!("{num_1} + {num_2} is {}", num_1 + num_2);
-    println!("{num_1} - {num_2} is {}", num_1 - num_2);
-}
-
-fn get_num() -> i32 {
-    let mut input = String::default();
-    io::stdin().read_line(&mut input).expect("error reading");
-    input.trim().parse().expect("not a i32")
+    // im using "cargo watch", for QoL and enforcing proper standards
+    // "cargo watch -c -q -x 'clippy -- -D warnings -W clippy::pedantic' -x 'run --bin 02_fn_parameters'"
 }
