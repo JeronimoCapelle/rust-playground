@@ -1,5 +1,5 @@
 # rust-playground
----
+
 This is a simple repository for tracking the small programs that I make while learning the rust programming language.
 
 This repo only has tiny projects inside "src/bin", which you can run them individually by doing:
