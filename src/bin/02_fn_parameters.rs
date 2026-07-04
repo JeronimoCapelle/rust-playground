@@ -1,7 +1,12 @@
 fn main() {
-    print!("{}", adder(2, adder(1, 4)));
+    let og_price = 100;
+    let discount = 20;
+    println!(
+        "item was {og_price}, discount is {discount}, final_price is {}",
+        final_price(100, 20)
+    );
 }
 
-fn adder(x: i32, y: i32) -> i32 {
-    x + y
+fn final_price(price: i32, discount: i32) -> i32 {
+    price - discount
 }
