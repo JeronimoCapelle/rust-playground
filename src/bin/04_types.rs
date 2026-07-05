@@ -1,13 +1,11 @@
 fn main() {
-    println!("{}", is_valid_percentage(0));
-    println!("{}", is_valid_percentage(100));
-    println!("{}", is_valid_percentage(101));
-    println!("{}", is_valid_percentage(-1));
+    println!("{}", describe(-1));
 }
 
-fn is_valid_percentage(x: i32) -> bool {
-    if x < 0 {
-        return false;
+fn describe(n: i32) -> &'static str {
+    match n.cmp(&0) {
+        std::cmp::Ordering::Less => "negative",
+        std::cmp::Ordering::Greater => "positive",
+        std::cmp::Ordering::Equal => "zero",
     }
-    x <= 100
 }
