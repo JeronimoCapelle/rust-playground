@@ -8,13 +8,13 @@ fn main() {
     let operand = get_operand();
     let num_2 = get_number();
 
-    if !verify_operand(&operand) {
+    if !verify_operand(operand) {
         return;
     }
 
-    let result = calculate(num_1, &operand, num_2);
+    let result = calculate(num_1, operand, num_2);
 
-    display_result(num_1, &operand, num_2, result);
+    display_result(num_1, operand, num_2, result);
 }
 
 fn get_number() -> i32 {
@@ -22,9 +22,9 @@ fn get_number() -> i32 {
     get_input().parse().expect("not a number")
 }
 
-fn get_operand() -> String {
+fn get_operand() -> char {
     println!("Operand:");
-    get_input()
+    get_input().chars().next().expect("not a value")
 }
 
 fn get_input() -> String {
@@ -35,21 +35,21 @@ fn get_input() -> String {
     input.trim().to_string()
 }
 
-fn display_result(x: i32, operand: &str, y: i32, res: i32) {
+fn display_result(x: i32, operand: char, y: i32, res: i32) {
     println!("-----------");
     println!("{x} {operand} {y} = {res}");
 }
 
-fn verify_operand(operand: &str) -> bool {
-    matches!(operand, "+" | "-" | "*" | "/")
+fn verify_operand(operand: char) -> bool {
+    matches!(operand, '+' | '-' | '*' | '/')
 }
 
-fn calculate(x: i32, operand: &str, y: i32) -> i32 {
+fn calculate(x: i32, operand: char, y: i32) -> i32 {
     match operand {
-        "+" => x + y,
-        "-" => x - y,
-        "*" => x * y,
-        "/" => x / y,
+        '+' => x + y,
+        '-' => x - y,
+        '*' => x * y,
+        '/' => x / y,
         _ => 0,
     }
 }
