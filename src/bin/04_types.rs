@@ -1,11 +1,11 @@
 fn main() {
-    println!("{}", describe(-1));
+    let (min, max) = min_max(5, 3);
+    println!("{min} < {max}");
 }
 
-fn describe(n: i32) -> &'static str {
-    match n.cmp(&0) {
-        std::cmp::Ordering::Less => "negative",
-        std::cmp::Ordering::Greater => "positive",
-        std::cmp::Ordering::Equal => "zero",
+fn min_max(a: i32, b: i32) -> (i32, i32) {
+    match a.cmp(&b) {
+        std::cmp::Ordering::Less => (a, b),
+        _ => (b, a),
     }
 }
