@@ -12,11 +12,7 @@ fn main() {
 }
 
 fn build_name(first_name: &str, last_name: &str) -> String {
-    let mut name = String::default();
-    name.push_str(first_name);
-    name.push(' ');
-    name.push_str(last_name);
-    name
+    format!("{first_name} {last_name}")
 }
 
 fn get_input() -> String {
