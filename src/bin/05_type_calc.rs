@@ -1,4 +1,8 @@
 fn main() {
+    //GOAL:
+    // Upgrade from the previous simple calc.
+    // This one takes an operand as well
+
     let x = get_number();
     let y = get_number();
     let op = get_operand();

@@ -1,7 +1,7 @@
 fn main() {
     // GOAL:
     // ask the user for a temperature in Celsius,
-    // convert it to Fahrenheit, and display both."
+    // convert it to Fahrenheit, and display both.
 
     let celsius = get_temp();
     let farenheit = convert_to_farenheit(celsius);

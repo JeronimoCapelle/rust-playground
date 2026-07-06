@@ -1,4 +1,7 @@
 fn main() {
+    // GOAL:
+    // Concatenate the name
+
     println!("What is your first name?");
     let first_name = get_input();
 

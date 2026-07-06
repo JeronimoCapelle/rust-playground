@@ -1,7 +1,12 @@
 fn main() {
-    let (start, end) = get_range();
+    // GOAL:
+    // Calculate the value of f(x) = x^2
+    // for the range of x specified
+    // [lower ; upper]
 
-    for i in start..=end {
+    let (lower, upper) = get_range();
+
+    for i in lower..=upper {
         println!("f({i}) = {}", calculate(i));
     }
 }

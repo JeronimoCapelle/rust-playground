@@ -1,4 +1,7 @@
 fn main() {
+    // Simple test for tuples in return types
+    // and the ordering Class
+
     let (min, max) = min_max(5, 3);
     println!("{min} < {max}");
 }

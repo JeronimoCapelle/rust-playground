@@ -1,6 +1,11 @@
 use std::io;
 
 fn main() {
+    // GOAL:
+    // Take user input,
+    // perform the two basic arithmetic operations,
+    // and print the result
+
     println!("Enter a whole number:");
     let num_1 = get_num();
 
