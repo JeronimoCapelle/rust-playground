@@ -9,8 +9,13 @@ fn main() {
 
     for time in 0..=5 {
         let curr_height = calculate_height(starting_height, time);
-        println!("{time}s = {}m", clamp_to_floor(curr_height));
+        report_time(time, clamp_to_floor(curr_height));
     }
+}
+
+fn report_time(time: i32, height: f64) {
+    let s: char = if time == 1 { char::MIN } else { 's' };
+    println!("At {time} second{s}, the ball is at height: {height:.1} meters");
 }
 
 fn get_input_number() -> f64 {
