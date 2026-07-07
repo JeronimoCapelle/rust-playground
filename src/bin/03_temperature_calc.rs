@@ -8,18 +8,18 @@ fn main() {
     display_both(celsius, farenheit);
 }
 
-fn get_temp() -> i32 {
+fn get_temp() -> f64 {
     println!("Please provide a temperature in Celsius");
     get_input().parse().expect("not a number")
 }
 
-fn convert_to_farenheit(celsius: i32) -> i32 {
-    (celsius * 9) / 5 + 32
+fn convert_to_farenheit(celsius: f64) -> f64 {
+    (celsius * 9.0) / 5.0 + 32.0
 }
 
-fn display_both(celsius: i32, farenheit: i32) {
-    println!("Celsius: {celsius}");
-    println!("Farenheit: {farenheit}");
+fn display_both(celsius: f64, farenheit: f64) {
+    println!("Celsius: {celsius:.1}");
+    println!("Farenheit: {farenheit:.1}");
 }
 
 fn get_input() -> String {
