@@ -4,24 +4,21 @@ fn main() {
 }
 
 fn get_inputs() -> (i32, i32, i32, i32) {
+    let mut args = std::env::args().skip(1);
     (
-        std::env::args()
-            .nth(1)
+        args.next()
             .expect("x not supplied")
             .parse::<i32>()
             .expect("Not a number"),
-        std::env::args()
-            .nth(2)
+        args.next()
             .expect("y not supplied")
             .parse::<i32>()
             .expect("Not a number"),
-        std::env::args()
-            .nth(3)
+        args.next()
             .expect("Width not supplied")
             .parse::<i32>()
             .expect("Not a number"),
-        std::env::args()
-            .nth(4)
+        args.next()
             .expect("Height not supplied")
             .parse::<i32>()
             .expect("Not a number"),
